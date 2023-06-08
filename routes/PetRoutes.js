@@ -7,6 +7,7 @@ router.get('/', checkAuth, PetCtrl.index)
 router.post('/', checkAuth, PetCtrl.create)
 router.get('/:id', checkAuth, PetCtrl.show)
 router.put('/:id', checkAuth, PetCtrl.update)
+router.put('/:id/add-photo', checkAuth, PetCtrl.addPhoto)
 router.delete('/:id', checkAuth, PetCtrl.deletePet)
 
 module.exports = router

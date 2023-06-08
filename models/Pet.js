@@ -5,16 +5,17 @@ const Schema = mongoose.Schema;
 
 const PetSchema = new Schema({
     petName: { type: String, required: true },
-    image: { type: String, required: true },
+    image: { type: String},
     species: { type: String,
                required: true,
-               enum: ["Dog", "Cat", "Horse", "Bird", "Rabbit", "Other"]},
-    breed: { type: String, required: true },
-    age: { type: String, required: true },
-    weight: { type: String, required: true },
-    microchipNo: { type: String, required: true },
-    vaccination: { type: String, required: true },
-    medicalRecord: [{ type: String, required: true }],
+               enum: ["Dog", "Cat", "Horse", "Bird", "Rabbit", "Hamster", "Other"]},
+    breed: { type: String},
+    sex: { type: String, enum: ["Male", "Female"]},
+    age: { type: String },
+    weight: { type: String},
+    microchipNo: { type: String},
+    vaccination: { type: String},
+    medicalRecord: [{ type: String}],
     owner: { type: Schema.Types.ObjectId, ref: 'Profile' }
 });
 
