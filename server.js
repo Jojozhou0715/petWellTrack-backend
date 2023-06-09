@@ -18,7 +18,12 @@ app.use(express.json()); // parse json bodies
 app.use(formData.parse())
 
 // ROUTES
-mongoose.connect(MONGODB_URI).then(() => {
+mongoose.set('strictQuery', true)
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
   console.log('Connected to MongoDB Atlas');
 }).catch((err) => {
   console.log('Error connecting to MongoDB Atlas:', err);
